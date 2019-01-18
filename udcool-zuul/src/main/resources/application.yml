@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: udcool.zuul
+server:
+  port: 9006
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9001/eureka/
+
+zuul:
+  routes:
+    api-a:
+      path: /api/a/**
+      serviceId: udclool-web-admin-ribbon
+    api-b:
+      path: /api/b/**
+      serviceId: udcool-web-admin-feign
