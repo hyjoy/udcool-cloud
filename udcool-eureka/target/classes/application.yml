@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: udcool-eureka
+
+server:
+  port: 9001
+
+eureka:
+  instance:
+    hostname: localhost
+  client: # 通过设置register-with-eureka 和 fetch-registry 为false来表明自己是一个Eureka Server
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
